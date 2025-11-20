@@ -18,7 +18,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 def get_connection():
     try:
         return pymysql.connect(
-            host='127.0.0.1',      # ← исправлено на стандартный localhost
+            host='127.127.126.6',
             user='root',
             password='',           # ← укажите свой пароль, если есть
             database='repair_db',
@@ -26,6 +26,6 @@ def get_connection():
             autocommit=True
         )
     except Exception:
-        QMessageBox.critical(None, "Ошибка БД", 
-            "Не удалось подключиться к базе данных.")
+        QMessageBox.critical(None, "Ошибка БД",
+            "Не удалось подключиться к базе данных")
         exit()  # закрываем программу
